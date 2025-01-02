@@ -1,10 +1,55 @@
 feather.replace();
 
-const mobileMenuButton = document.getElementById('mobile-menu-button');
-const mobileMenu = document.getElementById('mobile-menu');
+// Wait for DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', () => {
+    // Get required elements
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    
+    // Track menu state
+    let isMenuOpen = false;
 
-mobileMenuButton.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
+    // Function to open menu
+    const openMenu = () => {
+        mobileMenu.classList.remove('opacity-0', '-translate-y-2', 'pointer-events-none');
+        mobileMenu.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
+        menuIcon.classList.add('hidden');
+        closeIcon.classList.remove('hidden');
+        isMenuOpen = true;
+    };
+
+    // Function to close menu
+    const closeMenu = () => {
+        mobileMenu.classList.add('opacity-0', '-translate-y-2', 'pointer-events-none');
+        mobileMenu.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
+        menuIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+        isMenuOpen = false;
+    };
+
+    // Toggle menu on button click
+    mobileMenuButton.addEventListener('click', () => {
+        if (isMenuOpen) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+    });
+
+    // Close menu when clicking menu items
+    const menuItems = mobileMenu.querySelectorAll('a');
+    menuItems.forEach(item => {
+        item.addEventListener('click', closeMenu);
+    });
+
+    // Close menu on window resize (if desktop breakpoint is reached)
+    window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768 && isMenuOpen) { // 768px is the md breakpoint in Tailwind
+            closeMenu();
+        }
+    });
 });
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
