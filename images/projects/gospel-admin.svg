@@ -1,0 +1,39 @@
+<!-- Gospel Admin System Screenshot Placeholder -->
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1f2937;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#111827;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="400" height="300" fill="url(#bg)"/>
+  
+  <!-- Header bar -->
+  <rect width="400" height="60" fill="#06b6d4"/>
+  <text x="20" y="35" fill="white" font-family="Arial, sans-serif" font-size="18" font-weight="bold">Gospel Admin System</text>
+  <circle cx="360" cy="30" r="15" fill="rgba(255,255,255,0.2)"/>
+  <circle cx="330" cy="30" r="15" fill="rgba(255,255,255,0.2)"/>
+  
+  <!-- Sidebar -->
+  <rect x="0" y="60" width="80" height="240" fill="#374151"/>
+  <rect x="10" y="80" width="60" height="8" fill="#6b7280"/>
+  <rect x="10" y="100" width="50" height="8" fill="#6b7280"/>
+  <rect x="10" y="120" width="55" height="8" fill="#6b7280"/>
+  <rect x="10" y="140" width="45" height="8" fill="#6b7280"/>
+  
+  <!-- Main content area -->
+  <rect x="90" y="80" width="290" height="30" fill="#4b5563"/>
+  <rect x="100" y="85" width="100" height="20" fill="#6b7280"/>
+  
+  <!-- Cards -->
+  <rect x="100" y="130" width="80" height="60" rx="8" fill="#3b82f6"/>
+  <rect x="200" y="130" width="80" height="60" rx="8" fill="#10b981"/>
+  <rect x="300" y="130" width="80" height="60" rx="8" fill="#f59e0b"/>
+  
+  <!-- Table representation -->
+  <rect x="100" y="210" width="270" height="80" fill="#374151"/>
+  <rect x="110" y="220" width="250" height="10" fill="#4b5563"/>
+  <rect x="110" y="240" width="250" height="10" fill="#4b5563"/>
+  <rect x="110" y="260" width="250" height="10" fill="#4b5563"/>
+</svg>
